@@ -1,0 +1,454 @@
+% ===================== 第一阶段：基础指法、节奏与和弦（第 1-10 课） =====================
+\pdfbookmark[1]{第一阶段 · 基础指法、节奏与和弦}{stg1}
+\stagepage{1}{stageA}{基础指法、节奏与和弦}{第 1--10 课}%
+{建立指板认识与正确的持琴、拨弦、爬格子动作，掌握基础节奏型、基础和弦、音程与扫弦，并在《Fade to Black》《不再犹豫》的片段中完成第一次曲目应用。}%
+{\stgitem{第 1 课 · 基础指法：爬格子、拨弦与音位图}
+ \stgitem{第 2 课 · 节奏基础：四分、八分与十六分音符}
+ \stgitem{第 3 课 · 节奏进阶：切分音、连音线、休止符与附点}
+ \stgitem{第 4 课 · 和弦学习}
+ \stgitem{第 5 课 · 阶段练习课（一）}}%
+{\stgitem{第 6 课 · 音程关系与扫弦}
+ \stgitem{第 7 课 · 和弦构成}
+ \stgitem{第 8 课 · 机能练习：手指机能练习}
+ \stgitem{第 9 课 · 分解和弦前奏演奏}
+ \stgitem{第 10 课 · 大横按、1-6-4-5 和弦排列与 Bm 和弦}}
+\SetStage{stageA}{第一阶段 · 基础指法、节奏与和弦}{第 1--10 课}
+
+\pdfbookmark[2]{第 1 课 · 基础指法：爬格子、拨弦与音位图}{lsn1}
+\begin{lessoncard}{1}{基础指法：爬格子、拨弦与音位图}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 让学生对吉他指板、弦和品位形成基础认识。
+\item 掌握正确的持琴与持拨片方式，能够完成基础拨弦动作。
+\item 初步掌握正确的爬格子动作，建立左、右手配合意识。
+\item 养成手部放松、手指贴近指板的练习习惯。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 认识六根弦、品位、品丝和指板音位图。
+\item 讲解拨片的夹持方式、露出长度、触弦位置与基础拨弦手法。
+\item 讲解左手按弦的基本姿势，包括指尖按弦、拇指位置和手腕状态。
+\item 讲解基础爬格子指序及练习方法。
+\item 重点纠正手指抬得过高，也就是“手指起飞”的问题。
+\item 本课不使用节拍器，以动作正确、发音清晰和手部放松为优先。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 根据音位图辨认不同弦与品位的位置。
+\item 在单根弦上进行慢速基础拨弦，体会拨片触弦的深浅与力度。
+\item 进行基础爬格子练习，控制无关手指的抬起幅度。
+\item 逐音检查是否出现杂音、闷音、按弦过度用力或手腕紧张。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\photo[4.3cm]{ai/posture.png}\hspace{9mm}\photo[4.3cm]{ai/pick_grip.png}
+\end{center}
+\begin{fignotes}
+\item 持琴：琴身腰部落在右腿上，右前臂搭在琴体上分担重量，背部放松坐直，琴颈略微上扬。
+\item 持拨片：拇指指腹压住拨片，食指侧面在下方托住，其余手指自然放松蜷起。
+\item 拨片只露出小尖：露出越长越容易挂弦、发音越钝——对应课文说的「露出长度与触弦位置」。
+\end{fignotes}
+\end{fignote}
+\begin{fignote}
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=0.48cm]
+  \fill[stagecur!10] (1,0) rectangle (2,5);
+  \draw[line width=3pt, inkGray] (0,-0.05) -- (0,5.05);
+  \foreach \f in {1,...,5}{\draw[line width=1.1pt, inkGray!70] (\f,0) -- (\f,5);}
+  \fill[inkGray!30] (2.5,2.5) circle (0.15);
+  \fill[inkGray!30] (4.5,2.5) circle (0.15);
+  \foreach \s in {1,...,6}{
+    \draw[line width={0.3pt+0.16pt*\s}, inkGray] (-0.5,6-\s) -- (5.4,6-\s);}
+  \foreach \s/\n in {1/e,2/B,3/G,4/D,5/A,6/E}{
+    \node[font=\scriptsize\sffamily, inkGray, left] at (-0.55,6-\s) {\n};}
+  \foreach \f in {1,...,5}{\node[gray, font=\scriptsize] at (\f-0.5,-0.8) {\f};}
+  \draw[stagecur, line width=0.7pt, -{Stealth[length=1.8mm]}]
+    (0,6.6) node[above, font=\footnotesize\sffamily]{弦枕} -- (0,5.35);
+  \draw[stagecur, line width=0.7pt, -{Stealth[length=1.8mm]}]
+    (3,6.6) node[above, font=\footnotesize\sffamily]{品丝} -- (3,5.25);
+  \draw[stagecur, line width=0.7pt, -{Stealth[length=1.8mm]}]
+    (1.5,-2.5) node[below, font=\footnotesize\sffamily]{品位（第 2 品）} -- (1.5,-0.15);
+  \node[font=\footnotesize\sffamily, stagecur, right] at (5.75,3.6) {琴弦};
+  \draw[stagecur, line width=0.7pt, -{Stealth[length=1.8mm]}] (5.75,3.6) -- (5.45,3.08);
+\end{tikzpicture}
+\end{center}
+\begin{fignotes}
+\item 六根弦自上而下为 e、B、G、D、A、E，弦越粗音越低；空弦音是每根弦不按任何品位时的发音。
+\item 相邻两条品丝之间是一个品位；按弦按在品位内、靠近品丝但不压在品丝上（见第 4 课）。
+\item 指板音位图就是这样的展开图：横向数品位、纵向对应六根弦，先学会在图上找位置，再到琴上找。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 2 课 · 节奏基础：四分、八分与十六分音符}{lsn2}
+\begin{lessoncard}{2}{节奏基础：四分、八分与十六分音符}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 建立四分音符、八分音符和十六分音符的基础时值概念。
+\item 理解前八后十六、前十六后八两种常用节奏组合。
+\item 能够把看到的基础节奏型转化为数拍、拍手和拨弦动作。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 四分音符、八分音符和十六分音符之间的时值与等分关系。
+\item 前八后十六节奏型：一个八分音符加两个十六分音符。
+\item 前十六后八节奏型：两个十六分音符加一个八分音符。
+\item 基础数拍方法，以及拍手与空弦拨弦的对应关系。
+\item 保持每个音符间隔均匀，避免越弹越快或节奏忽紧忽松。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 先口数节奏，再用拍手完成四分、八分和十六分音符练习。
+\item 使用单根空弦，把不同音符时值转换为拨弦动作。
+\item 分别循环前八后十六、前十六后八节奏型。
+\item 将四种基础节奏型进行简单排列与组合练习。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\begin{adjustbox}{max width=\textwidth}
+\begin{rpattern}{四分}\rnhead{0}\end{rpattern}\hspace{9mm}%
+\begin{rpattern}{八分}\rnhead{0}\rnhead{0.9}\rnbeamA{0}{0.9}\end{rpattern}\hspace{9mm}%
+\begin{rpattern}{十六分}\rnhead{0}\rnhead{0.55}\rnhead{1.1}\rnhead{1.65}\rnbeamA{0}{1.65}\rnbeamB{0}{1.65}\end{rpattern}\hspace{9mm}%
+\begin{rpattern}{前八后十六}\rnhead{0}\rnhead{0.9}\rnhead{1.45}\rnbeamA{0}{1.45}\rnbeamB{0.9}{1.45}\end{rpattern}\hspace{9mm}%
+\begin{rpattern}{前十六后八}\rnhead{0}\rnhead{0.55}\rnhead{1.1}\rnbeamA{0}{1.1}\rnbeamB{0}{0.55}\end{rpattern}
+\end{adjustbox}
+\figcaption{本课节奏型示意（每格为一拍内的组合）}
+\end{center}
+\begin{fignotes}
+\item 一拍以四分音符为单位：八分音符占半拍、十六分音符占四分之一拍，时值逐级对半等分。
+\item 看符杠数拍：一道杠是八分，两道杠是十六分；杠连到哪个音，哪个音就在同一拍组里。
+\item 前八后十六＝一个八分加两个十六分，前十六后八正好相反；先口数、再拍手、最后拨弦。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 3 课 · 节奏进阶：切分音、连音线、休止符与附点}{lsn3}
+\begin{lessoncard}{3}{节奏进阶：切分音、连音线、休止符与附点}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 认识切分音、连音线、休止符和附点的基本含义。
+\item 理解“没有拨弦的部分也要继续数拍”的节奏意识。
+\item 能够完成包含以上节奏元素的短句练习。
+\item 提高学生对节奏谱面、听觉和实际演奏之间的转换能力。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 切分音中的重音变化与弱拍延续。
+\item 连音线对音符时值的延长，以及连线后不重复拨弦的处理。
+\item 不同时值休止符的识别与演奏方法。
+\item 附点音符“原时值加上原时值一半”的基本关系。
+\item 把单一知识点放进一至两小节的节奏短句中反复练习。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 每讲一个节奏知识点，立即配合一至两小节的短句练习。
+\item 按“口数节奏、拍手、空弦拨弦”的顺序完成同一条练习。
+\item 分别练习切分音、连音线、休止符和附点，再进行混合练习。
+\item 每条节奏连续正确完成三遍后再进入下一条。
+\item 对容易出错的小节进行单独循环，避免从头到尾机械重复。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\begin{rpattern}{附点四分＋八分}\rnhead{0}\rndot{0}\rnhead{1.4}\rnflag{1.4}\end{rpattern}\hspace{12mm}%
+\begin{rpattern}{附点八分＋十六分}\rnhead{0}\rndot{0}\rnhead{1.1}\rnbeamA{0}{1.1}\rnbeamB{0.82}{1.1}\end{rpattern}
+\end{center}
+\begin{fignotes}
+\item 符头右边的小圆点就是附点：把原时值再延长一半，附点四分音符＝一拍半。
+\item 附点音符后面常接一个短音符补齐整拍，两个音合起来仍是完整的拍数，数拍不能断。
+\item 没有拨弦的延长部分也要继续数拍——这正是本课强调的节奏意识。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 4 课 · 和弦学习}{lsn4}
+\begin{lessoncard}{4}{和弦学习}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 初步认识和弦图及其基本读法。
+\item 掌握课程所选基础和弦的正确按法。
+\item 能够逐弦检查和弦发音，并完成简单的和弦切换。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 和弦图中的弦、品位、手指标记、空弦与不弹弦标记。
+\item 左手指尖按弦、靠近品丝但不压在品丝上的基本原则。
+\item 保持指关节支撑，避免手指碰到相邻琴弦。
+\item 逐弦检查和弦发音，定位杂音、闷音和漏音产生的原因。
+\item 基础和弦之间的慢速切换方法。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 根据和弦图独立摆出指定和弦手型。
+\item 对每个和弦逐弦拨奏并检查发音。
+\item 练习单个和弦的反复落指与放松。
+\item 选择两个基础和弦进行慢速循环切换。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\chordscheme[name = C, finger = {3/5:3, 2/4:2, 1/2:1}, ring = {1,3}, mute = {6}]
+\hspace{14mm}
+\chordscheme[name = Am, finger = {2/4:2, 2/3:3, 1/2:1}, ring = {1,5}, mute = {6}]
+\end{center}
+\begin{fignotes}
+\item 读图方向：左端粗线是弦枕，横线是六根弦（最上面是高音 e 弦），竖线是品丝。
+\item 圆点上的数字是手指标记：1 食指、2 中指、3 无名指、4 小指；照着数字落指即可。
+\item 弦枕左侧的空心圈表示空弦要弹，$\times$ 表示这根弦不弹；逐弦拨奏检查每个音是否清晰。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 5 课 · 阶段练习课（一）}{lsn5}
+\begin{lessoncard}{5}{阶段练习课（一）}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 巩固前四节课的基础指法、拨弦、节奏和和弦内容。
+\item 找出学生在动作、发音、节奏或和弦切换中的主要问题。
+\item 建立正确练习顺序，避免错误动作被反复固化。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 复习指板基础、持拨片、拨弦与爬格子。
+\item 复习四分、八分、十六分、前八后十六和前十六后八。
+\item 复习切分音、连音线、休止符和附点节奏短句。
+\item 复习基础和弦按法、逐弦检查与和弦切换。
+\item 根据学生实际情况进行针对性纠错，本课以巩固为主，不集中加入大量新知识。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 进行一轮基础爬格子与拨弦检查。
+\item 抽取不同节奏型进行口数、拍手和空弦拨弦。
+\item 完成基础和弦的听音检查与两和弦切换。
+\item 把出现问题最多的动作拆开，进行短时间、高质量的重复练习。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\begin{adjustbox}{max width=\textwidth}
+\stepchip{爬格子·拨弦检查}\steparrow
+\stepchip{节奏：口数→拍手→拨弦}\steparrow
+\stepchip{和弦听音检查}\steparrow
+\stepchip{问题拆解短循环}
+\end{adjustbox}
+\end{center}
+\begin{fignotes}
+\item 复习顺序照搬第 1--4 课的学习顺序：先动作、再节奏、后和弦，一轮走完再集中纠错。
+\item 纠错不整段重来：把出错的动作单独拆出来，做短时间、高质量的小循环。
+\item 过关线是「动作正确、发音干净、节奏均匀」，三者有一样不达标就留在本环节。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 6 课 · 音程关系与扫弦}{lsn6}
+\begin{lessoncard}{6}{音程关系与扫弦}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 初步理解音程是两个音之间的距离关系。
+\item 建立三度、五度和八度的基础听觉与指板位置印象。
+\item 掌握基础下扫、上扫动作，保持手腕放松和扫弦连续性。
+\item 能够把基础扫弦应用到简单的和弦切换中。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 音程关系的基础概念，以及根音与其他音之间的距离。
+\item 三度的色彩变化、五度与八度相对稳定的听觉感受。
+\item 根据一个根音，在指板上寻找它的五度音和八度音。
+\item 下扫、上扫的动作方向，手腕放松、触弦深度与扫弦范围。
+\item 扫弦动作与和弦切换之间的协调。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 教师给出一个根音，学生在指板上寻找对应的五度音与八度音。
+\item 对比聆听三度、五度与八度，建立初步听觉印象。
+\item 在单个和弦上分别练习连续下扫、连续上扫和上下扫组合。
+\item 使用两个基础和弦完成短循环扫弦练习。
+\item 观察扫弦时手腕是否僵硬、拨片是否入弦过深，以及动作是否中断。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=0.42cm]
+  \foreach \s in {1,...,6}{
+    \draw[inkGray!60, line width={0.3pt+0.13pt*\s}] (0,\s-1) -- (3.4,\s-1);}
+  \draw[stagecur, line width=2pt, -{Stealth[length=3mm]}] (1.7,6.3) -- (1.7,-1.3);
+  \node[font=\footnotesize\sffamily, inkGray, anchor=north] at (1.7,-2.6) {下扫};
+\end{tikzpicture}\hspace{16mm}%
+\begin{tikzpicture}[x=1cm,y=0.42cm]
+  \foreach \s in {1,...,6}{
+    \draw[inkGray!60, line width={0.3pt+0.13pt*\s}] (0,\s-1) -- (3.4,\s-1);}
+  \draw[stagecur, line width=2pt, -{Stealth[length=3mm]}] (1.7,-1.3) -- (1.7,6.3);
+  \node[font=\footnotesize\sffamily, inkGray, anchor=north] at (1.7,-2.6) {上扫};
+\end{tikzpicture}
+\end{center}
+\begin{fignotes}
+\item 下扫由低音弦扫向高音弦（图中自上而下），上扫方向相反；两个方向的音色略有差异。
+\item 动作来自手腕的放松摆动，拨片入弦要浅，扫过六根弦一气呵成、不要中断。
+\item 下扫、上扫交替时保持摆动幅度与速度均匀，再把扫弦接到两个和弦的切换循环里。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 7 课 · 和弦构成}{lsn7}
+\begin{lessoncard}{7}{和弦构成}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 理解基础三和弦由根音、三音和五音构成。
+\item 初步认识大三和弦与小三和弦的构成差异。
+\item 能够把第 6 课的音程关系与实际和弦联系起来。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 根音、三音、五音在三和弦中的作用。
+\item 大三度、小三度和纯五度与大小三和弦的关系。
+\item 从指定根音出发，按音程关系推导基础大三和弦和小三和弦。
+\item 在已经学习的和弦中寻找并认识和弦内音。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 给出根音，口头或书面写出对应大三和弦、小三和弦的组成音。
+\item 对比弹奏同根大三和弦与小三和弦，体会听觉色彩差异。
+\item 在已学和弦手型中标记根音、三音与五音。
+\item 使用简单和弦进行构成音问答与听辨。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\begin{tikzpicture}[y=0.78cm]
+  \node[font=\small\sffamily\bfseries, inkGray] at (0,2.95) {大三和弦};
+  \node[fill=stagecur!40, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,2) {五音 5};
+  \node[fill=stagecur!70, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,1) {三音 3};
+  \node[fill=stagecur, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,0) {根音 1};
+  \node[font=\scriptsize\sffamily, inkGray, right] at (1.25,0.5) {大三度};
+  \node[font=\scriptsize\sffamily, inkGray, right] at (1.25,1.5) {小三度};
+\end{tikzpicture}\hspace{17mm}%
+\begin{tikzpicture}[y=0.78cm]
+  \node[font=\small\sffamily\bfseries, inkGray] at (0,2.95) {小三和弦};
+  \node[fill=stagecur!40, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,2) {五音 5};
+  \node[fill=stagecur!70, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,1) {三音 $\flat$3};
+  \node[fill=stagecur, text=white, rounded corners=1.2mm, minimum width=2.1cm,
+    minimum height=0.5cm, font=\small\sffamily] at (0,0) {根音 1};
+  \node[font=\scriptsize\sffamily, inkGray, right] at (1.25,0.5) {小三度};
+  \node[font=\scriptsize\sffamily, inkGray, right] at (1.25,1.5) {大三度};
+\end{tikzpicture}
+\end{center}
+\begin{fignotes}
+\item 三和弦由下往上按三度叠置：根音上叠三音，三音上再叠五音；根音到五音都是纯五度。
+\item 大、小三和弦的差别只在三音：大三和弦先大三度后小三度，小三和弦正好相反。
+\item 三音决定明暗色彩，五音相对稳定——这正对应第 6 课听到的三度色彩变化。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 8 课 · 机能练习：手指机能练习}{lsn8}
+\begin{lessoncard}{8}{机能练习：手指机能练习}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 提升左手手指的独立性、灵活性、跨度与控制能力。
+\item 改善手指抬得过高、无关手指跟随移动等问题。
+\item 加强左、右手之间的基础同步。
+\item 建立“动作准确和放松优先于速度”的练习观念。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 不同指序组合的手指独立性练习。
+\item 相邻弦、跨弦与换弦时的手指控制。
+\item 小拇指落点、力度与独立性的专项关注。
+\item 左手按弦与右手拨弦的同步训练。
+\item 练习中的放松检查，避免手掌、手腕和前臂持续紧张。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 完成基础爬格子的变形指序练习。
+\item 进行相邻弦与跨弦的机能组合练习。
+\item 针对无名指、小拇指安排独立落指与抬指练习。
+\item 每完成一组练习后主动放松手部，再进入下一组。
+\item 以发音清晰、动作稳定和手指贴近指板为达标标准，不盲目提速。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\photo[4.6cm]{ai/crawl.png}
+\end{center}
+\begin{fignotes}
+\item 一指一品：四根手指各管一个品位，指尖立起按弦、落点靠近品丝。
+\item 关键在「没轮到的手指」：悬停在弦的正上方贴近琴弦，不飞高、不跟随其他手指乱动。
+\item 变形指序（如 1-3-2-4、4-2-3-1）专治无名指和小指的依赖，速度以四个音完全均匀为准。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 9 课 · 分解和弦前奏演奏}{lsn9}
+\begin{lessoncard}{9}{分解和弦前奏演奏}
+\songrow{选曲}{《Fade to Black》}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 理解分解和弦的基本演奏方式。
+\item 掌握右手按固定顺序逐弦拨奏的基本方法。
+\item 提高左手和弦手型与右手拨弦顺序之间的配合。
+\item 将前期的和弦、拨弦和节奏内容应用到具体前奏片段中。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 分解和弦与整体扫弦在发音方式上的区别。
+\item 右手拨弦顺序、换弦路线和音量均衡。
+\item 左手和弦或指型转换中的保留指与提前准备。
+\item 《Fade to Black》选段的分句、难点拆解与连接方式。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 先用空弦单独练习右手拨弦顺序。
+\item 单独练习左手和弦或指型变化，不加入完整右手节奏。
+\item 将前奏拆分为短句，对难点小节进行循环。
+\item 在音符清晰、换弦准确的前提下逐步连接完整片段。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\photo[4.6cm]{ai/pick_strings.png}
+\end{center}
+\begin{fignotes}
+\item 分解和弦＝左手按住和弦、右手按固定顺序一根一根拨弦，和弦音依次响起并叠在一起。
+\item 右手手腕放松微拱，拨片只动一小段距离；换弦路线提前想好，避免大幅跳动。
+\item 每根弦的音量要均衡：低音弦别炸、高音弦别虚，先空弦练顺右手顺序再合左手。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}
+
+\pdfbookmark[2]{第 10 课 · 大横按、1-6-4-5 和弦排列与 Bm 和弦}{lsn10}
+\begin{lessoncard}{10}{大横按、1-6-4-5 和弦排列与 Bm 和弦}
+\songrow{曲目练习}{《不再犹豫》前奏扫弦}
+\cardsec{\faBullseye}{教学目标}
+\begin{itemize}
+\item 掌握大横按的基本发力方式与手型。
+\item 能够完成 Bm 和弦的正确按法并逐弦检查发音。
+\item 理解并练习按 1-6-4-5 顺序排列和弦的循环方式。
+\item 将大横按、和弦切换和扫弦应用到《不再犹豫》前奏中。
+\end{itemize}
+\cardsec{\faIcon{book-open}}{教学内容}
+\begin{itemize}
+\item 食指横按的位置、侧面受力、拇指支撑与手腕角度。
+\item 从局部横按过渡到完整大横按的方法。
+\item Bm 和弦手型、各弦发音检查与常见问题处理。
+\item 按 1-6-4-5 顺序进行和弦排列与循环。
+\item 《不再犹豫》前奏扫弦的和弦、节奏与连接方式。
+\end{itemize}
+\cardsec{\faIcon{pen-fancy}}{课堂练习}
+\begin{itemize}
+\item 从两根弦、三根弦的局部横按开始，逐步过渡到完整横按。
+\item 对 Bm 和弦逐弦拨奏，定位闷音与杂音。
+\item 单独循环练习 1-6-4-5 和弦连接。
+\item 先拆分练习《不再犹豫》前奏的扫弦节奏与和弦切换，再进行合并。
+\item 在手型稳定的前提下练习连续演奏，避免用过度挤压来换取发音。
+\end{itemize}
+\begin{fignote}
+\begin{center}
+\chordscheme[name = Bm, position = {2}, barre = {1/5-1:1},
+  finger = {2/2:2, 3/4:3, 3/3:4}, mute = {6}]
+\hspace{9mm}\photo[3.9cm]{ai/barre_hand.png}
+\end{center}
+\begin{fignotes}
+\item 图上方的数字 2 是把位记号：整个窗口从第 2 品开始，长条即食指在第 2 品横按 1--5 弦。
+\item 食指用侧面贴弦、靠近品丝，拇指在琴颈后方与食指相对发力，手腕适当前送。
+\item 横按不求一步到位：先按响两三根弦的局部横按，再逐步扩展到完整横按并逐弦检查。
+\end{fignotes}
+\end{fignote}
+\end{lessoncard}

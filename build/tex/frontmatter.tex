@@ -1,0 +1,109 @@
+% ===================== 整理说明 + 使用说明 =====================
+\pdfbookmark[1]{整理说明与使用说明}{front-notes}
+\pagehead{整理说明}
+
+\begin{tcolorbox}[enhanced, colback=mainNavy!4, colframe=mainNavy!70,
+  boxrule=0.5pt, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+本版依据现阶段口述与确认内容，将第 1--30 课统一整理为“教学目标、教学内容、课堂练习”三个层级；第 31--35 课暂保留课程标题，后续再逐课细化。
+\end{tcolorbox}
+
+\vspace{10mm}
+\pagehead{本册使用说明}
+
+\textbf{\sffamily 每课固定结构}\quad 第 1--30 课均按同一张卡片呈现，卡内三个子块依次为
+{\color{mainNavy}\faBullseye\ \textbf{\sffamily 教学目标}}、%
+{\color{mainNavy}\faIcon{book-open}\ \textbf{\sffamily 教学内容}}、%
+{\color{mainNavy}\faIcon{pen-fancy}\ \textbf{\sffamily 课堂练习}}；
+涉及曲目的课，卡片上方另有
+\tcbox[on line, arc=6pt, boxrule=0pt, colback=mainNavy!12, coltext=mainNavy,
+  left=7pt, right=9pt, top=2.5pt, bottom=2.5pt,
+  fontupper=\sffamily\bfseries\small]{\faMusic\hspace{4pt}选曲}%
+徽章行，标签沿用原大纲的「选曲 / 曲目练习 / 长期作业 / 结课曲目」四种提法。
+
+\vspace{6mm}
+\textbf{\sffamily 四阶段颜色}\quad 全书页眉、扉页与课程卡片按阶段换色：
+
+\vspace{3mm}
+\noindent\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\stagesq{stageA} & {\sffamily\bfseries 第一阶段}\quad 第 1--10 课 & 基础指法、节奏与和弦 \\[2.5pt]
+\stagesq{stageB} & {\sffamily\bfseries 第二阶段}\quad 第 11--20 课 & 技巧进阶与伴奏应用 \\[2.5pt]
+\stagesq{stageC} & {\sffamily\bfseries 第三阶段}\quad 第 21--30 课 & 指板、音阶与即兴 \\[2.5pt]
+\stagesq{stageD} & {\sffamily\bfseries 第四阶段}\quad 第 31--35 课 & 曲目 Solo 专项 \\
+\end{tabularx}
+
+\vspace{6mm}
+\textbf{\sffamily 配图说明}\quad 全书图示为按大纲内容绘制的统一风格矢量图，
+以及同一配色的 AI 生成插画（持琴、拨片、爬格子、横按、闷音等手型与舞台示范）；重点图示放在
+\tcbox[on line, arc=2mm, boxrule=0.4pt, colback=mainNavy!4, colframe=mainNavy!35,
+  left=6pt, right=6pt, top=2pt, bottom=2pt,
+  fontupper=\sffamily\small]{\textcolor{mainNavy}{\faIcon{lightbulb}}\hspace{4pt}\textbf{图解笔记}}%
+框内，图下附读图方法与动作要点，配合课文使用。
+
+\divider
+
+% ===================== 全书课程路线图 =====================
+\clearpage
+\pdfbookmark[1]{全书课程路线图}{front-roadmap}
+\pagehead{全书课程路线图}
+
+\begin{center}
+\begin{adjustbox}{max totalsize={\textwidth}{0.86\textheight}, center}
+\begin{tikzpicture}[
+  stagehead/.style={fill=#1, text=white, rounded corners=1.6mm, align=center,
+    font=\sffamily\bfseries\small, text width=3.85cm, inner ysep=6pt, anchor=north},
+  lesson/.style={fill=#1!12, text=inkGray, rounded corners=1.1mm,
+    font=\scriptsize, text width=3.85cm, inner sep=3.5pt, anchor=north}]
+\foreach [count=\c] \col/\name/\range/\lst in {%
+  stageA/基础指法、节奏与和弦/第 1--10 课/{%
+    {{\bfseries L1}\; 基础指法：爬格子、拨弦与音位图},
+    {{\bfseries L2}\; 节奏基础：四分、八分与十六分音符},
+    {{\bfseries L3}\; 节奏进阶：切分音、连音线、休止符与附点},
+    {{\bfseries L4}\; 和弦学习},
+    {{\bfseries L5}\; 阶段练习课（一）},
+    {{\bfseries L6}\; 音程关系与扫弦},
+    {{\bfseries L7}\; 和弦构成},
+    {{\bfseries L8}\; 机能练习：手指机能练习},
+    {{\bfseries L9}\; 分解和弦前奏演奏},
+    {{\bfseries L10}\; 大横按、1-6-4-5 和弦排列与 Bm 和弦}},
+  stageB/技巧进阶与伴奏应用/第 11--20 课/{%
+    {{\bfseries L11}\; 击弦、勾弦、滑弦与和弦内外音},
+    {{\bfseries L12}\; 击勾、双滑与断音练习},
+    {{\bfseries L13}\; 提速练习与和弦外音},
+    {{\bfseries L14}\; 调式学习：十二个自然大调的和弦推导},
+    {{\bfseries L15}\; 和弦外音与小拇指击勾弦},
+    {{\bfseries L16}\; 闷音、强力和弦与滑奏},
+    {{\bfseries L17}\; 阶段练习课（二）},
+    {{\bfseries L18}\; 阶段练习课（三）},
+    {{\bfseries L19}\; 制音扫弦、切音、推弦与揉弦},
+    {{\bfseries L20}\; 伴奏阶段结课练习}},
+  stageC/指板、音阶与即兴/第 21--30 课/{%
+    {{\bfseries L21}\; CAGED 吉他指型系统与指板认识},
+    {{\bfseries L22}\; 指板属性学习},
+    {{\bfseries L23}\; 手型串联},
+    {{\bfseries L24}\; 人工泛音},
+    {{\bfseries L25}\; 教材 Solo 练习},
+    {{\bfseries L26}\; 琶音、三和弦与七和弦},
+    {{\bfseries L27}\; 曲目练习与长期作业},
+    {{\bfseries L28}\; 大小调五声音阶手型关联与找调},
+    {{\bfseries L29}\; Swing 与 Shuffle},
+    {{\bfseries L30}\; 五声音阶即兴练习}},
+  stageD/曲目 Solo 专项/第 31--35 课/{%
+    {{\bfseries L31}\; 《加州旅馆》Solo 学习（一）},
+    {{\bfseries L32}\; 《加州旅馆》Solo 学习（二）},
+    {{\bfseries L33}\; 《加州旅馆》Solo 学习（三）},
+    {{\bfseries L34}\; 《加州旅馆》Solo 学习（四）},
+    {{\bfseries L35}\; 《加州旅馆》Solo 学习（五）}}}{%
+  \node[stagehead=\col] (h\c) at ({(\c-1)*4.35}, 0)
+    {\name\\[-1pt]{\footnotesize\mdseries (\range)}};
+  \coordinate (prev\c) at ({(\c-1)*4.35}, -1.15);
+  \foreach [count=\i] \lsn in \lst {
+    \node[lesson=\col] (p\c-\i) at ({(\c-1)*4.35}, {-1.15 - (\i-1)*1.08}) {\lsn};
+  }
+}
+\foreach \a/\b in {1/2, 2/3, 3/4}
+  \draw[-{Stealth[length=2.5mm]}, line width=1.1pt, mainNavy!60]
+    ([yshift=-3mm]h\a.east) -- ([yshift=-3mm]h\b.west);
+\end{tikzpicture}
+\end{adjustbox}
+\end{center}
+\clearpage

@@ -1,0 +1,21 @@
+# LaTeX 编译产物（源文件与最终 PDF 入库，中间产物不入）
+build/tex/*.aux
+build/tex/*.log
+build/tex/*.out
+build/tex/*.toc
+build/tex/main.pdf
+build/tex/c*.log
+build/tex/compile*.log
+build/tex/qa/
+
+# 弃用素材（v1 版下载的 Wikimedia 照片与早期自备照片，均已不引用）
+build/images/wiki/
+build/images/*.jpg
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+Thumbs.db
+.DS_Store

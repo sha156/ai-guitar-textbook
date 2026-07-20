@@ -1,0 +1,26 @@
+% 吉他课程教学大纲 · 精排版
+% 编译：xelatex -interaction=nonstopmode main.tex （两遍，remember picture 对位）
+\documentclass[11pt]{ctexart}
+\usepackage[a4paper, top=2.7cm, bottom=3.0cm, left=2.2cm, right=2.2cm,
+  headheight=1.3cm, headsep=0.7cm, footskip=1.6cm]{geometry}
+\setmainfont{Palatino Linotype}
+\setsansfont{Segoe UI}
+\usepackage{guitar-macros}
+\usepackage[hidelinks, unicode]{hyperref}
+\graphicspath{{../images/}}
+
+\begin{document}
+
+\makecover
+\pagestyle{lesson}
+\SetStage{mainNavy}{吉他课程教学大纲}{第 1--35 课}
+
+\input{frontmatter}
+\input{stage1}
+\input{stage2}
+\input{stage3}
+\input{stage4}
+\input{appendix}
+\input{backcover}
+
+\end{document}

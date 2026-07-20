@@ -1,0 +1,35 @@
+% ===================== 封底 =====================
+\clearpage\thispagestyle{empty}%
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[mainNavy] (current page.south west) rectangle (current page.north east);
+  \foreach \i in {0,...,5}
+    \draw[white, opacity=0.15, line width=0.45pt]
+      ([yshift=-4.2cm-\i*0.34cm] current page.north west)
+      -- ([yshift=-4.2cm-\i*0.34cm] current page.north east);
+  % 音孔同心圆 + 吉他图标
+  \foreach \r/\o in {5.6/0.05, 4.6/0.08, 3.7/0.11}
+    \draw[white, opacity=\o, line width=2.2pt]
+      ([yshift=3.4cm] current page.center) circle (\r);
+  \draw[stageC!75, line width=1.1pt]
+    ([yshift=3.4cm] current page.center) circle (2.55);
+  \draw[stageC!30, line width=0.7pt]
+    ([yshift=3.4cm] current page.center) circle (3.0);
+  \node[text=stageC] at ([yshift=3.4cm] current page.center)
+    {\fontsize{72}{72}\selectfont\faGuitar};
+  % 文案组
+  \node[text=white, anchor=north] at ([yshift=-1.2cm] current page.center) {%
+    \begin{minipage}{16cm}\centering
+      {\sffamily\fontsize{17}{24}\selectfont\bfseries 从第一次拨弦，到完整的曲目 Solo\par}
+      \vspace{9pt}
+      {\color{stageC}\rule{4.2cm}{1.8pt}\par}
+      \vspace{11pt}
+      {\footnotesize
+        \textcolor{stageA!60!white}{\rule[-1pt]{6pt}{6pt}}\hspace{4pt}基础指法、节奏与和弦\hspace{10pt}
+        \textcolor{stageB!60!white}{\rule[-1pt]{6pt}{6pt}}\hspace{4pt}技巧进阶与伴奏应用\hspace{10pt}
+        \textcolor{stageC!85!white}{\rule[-1pt]{6pt}{6pt}}\hspace{4pt}指板、音阶与即兴\hspace{10pt}
+        \textcolor{stageD!60!white}{\rule[-1pt]{6pt}{6pt}}\hspace{4pt}曲目 Solo 专项\par}
+      \vspace{16pt}
+      {\sffamily\footnotesize\color{white!75!mainNavy} 吉他课程教学大纲 · 第 1--35 课 · 第一至第三阶段详化版\par}
+    \end{minipage}};
+\end{tikzpicture}\null
+\clearpage

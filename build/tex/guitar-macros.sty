@@ -1,0 +1,289 @@
+% guitar-macros.sty — 吉他教学大纲精排版设计系统
+% 深蓝典藏配色 + 阶段驱动换色 + 课程卡片 + 自绘吉他图形宏
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{guitar-macros}[2026/07/20 Guitar syllabus design system]
+
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{fontawesome5}
+\RequirePackage{enumitem}
+\RequirePackage{graphicx}
+\RequirePackage{adjustbox}
+\RequirePackage{fancyhdr}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{guitarchordschemes}
+
+% ============ 1. 色板（全书唯一定义点） ============
+\definecolor{mainNavy}{HTML}{1B2A4A}  % 主色 墨藏青
+\definecolor{stageA}{HTML}{2E86AB}    % 阶段一 晴空蓝
+\definecolor{stageB}{HTML}{0F8B8D}    % 阶段二 青碧
+\definecolor{stageC}{HTML}{C89B3C}    % 阶段三 黄铜金
+\definecolor{stageD}{HTML}{A63A50}    % 阶段四 酒红
+\definecolor{inkGray}{HTML}{3C4048}   % 正文墨灰
+\definecolor{fbdotcolor}{HTML}{2B6CB0} % 指板图普通音位
+\definecolor{fbrootcolor}{HTML}{C53030} % 指板图根音
+\colorlet{stagecur}{mainNavy}
+\AtBeginDocument{\color{inkGray}}
+
+% ============ 2. 阶段状态宏：一次调用全书换色 ============
+\newcommand{\StageName}{}
+\newcommand{\StageRange}{}
+\newcommand{\SetStage}[3]{% #1 色名  #2 阶段名  #3 课程范围
+  \colorlet{stagecur}{#1}%
+  \renewcommand{\StageName}{#2}%
+  \renewcommand{\StageRange}{#3}}
+
+% ============ 3. 页眉页脚：满宽色条 + 圆形页码 ============
+\fancypagestyle{lesson}{%
+  \fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyhead[C]{\begin{tikzpicture}[remember picture, overlay]
+    \fill[stagecur] (current page.north west)
+      rectangle ([yshift=-1.05cm] current page.north east);
+    \node[anchor=west, text=white, font=\sffamily\bfseries\small]
+      at ([xshift=2.0cm, yshift=-0.55cm] current page.north west)
+      {\faGuitar\hspace{6pt}\StageName};
+    \node[anchor=east, text=white, font=\small]
+      at ([xshift=-2.0cm, yshift=-0.55cm] current page.north east)
+      {\StageRange};
+  \end{tikzpicture}}%
+  \fancyfoot[C]{\begin{tikzpicture}[remember picture, overlay]
+    \draw[stagecur!40, line width=0.7pt]
+      ([xshift=2.1cm, yshift=1.35cm] current page.south west)
+      -- ([xshift=-7mm, yshift=1.35cm] current page.south);
+    \draw[stagecur!40, line width=0.7pt]
+      ([xshift=7mm, yshift=1.35cm] current page.south)
+      -- ([xshift=-2.1cm, yshift=1.35cm] current page.south east);
+    \node[fill=stagecur, circle, text=white, inner sep=0pt,
+          font=\sffamily\bfseries\footnotesize, minimum size=7mm]
+      at ([yshift=1.35cm] current page.south) {\thepage};
+  \end{tikzpicture}}}
+
+% ============ 4. 列表符号 ============
+\setlist[itemize,1]{label=\textcolor{stagecur}{\scriptsize\faMusic},
+  leftmargin=1.7em, itemsep=2pt, topsep=3pt, parsep=0pt}
+\setlist[itemize,2]{label=\textcolor{stagecur!70}{\scriptsize$\blacktriangleright$},
+  leftmargin=1.5em, itemsep=1pt}
+
+% ============ 5. 封面 ============
+\newcommand{\makecover}{%
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[mainNavy] (current page.south west) rectangle (current page.north east);
+  \foreach \r/\o in {9.5/0.05, 7.6/0.08, 5.7/0.11, 3.8/0.15}
+    \draw[white, opacity=\o, line width=2.4pt]
+      ([xshift=-1.2cm, yshift=-1.8cm] current page.north east) circle (\r);
+  \foreach \i in {0,...,5}
+    \draw[white, opacity=0.18, line width=0.45pt]
+      ([yshift=-7.0cm-\i*0.34cm] current page.north west)
+      -- ([yshift=-7.0cm-\i*0.34cm] current page.north east);
+  \fill[stageC] ([yshift=4.8cm] current page.south west)
+    -- ([yshift=3.0cm] current page.south east)
+    -- (current page.south east) -- (current page.south west) -- cycle;
+  \node[anchor=west, text=white] at ([xshift=2.2cm, yshift=1.9cm] current page.west) {%
+    \begin{minipage}{14.5cm}
+      {\sffamily\fontsize{15}{20}\selectfont\bfseries 四阶段进阶 · 三十五课\par}
+      \vspace{0.8em}
+      {\sffamily\fontsize{42}{52}\selectfont\bfseries 吉他课程教学大纲\par}
+      \vspace{1.1em}
+      {\color{stageC}\rule{4.6cm}{2.5pt}\par}
+      \vspace{1.1em}
+      {\fontsize{13.5}{24}\selectfont 第 1--35 课\quad·\quad 第一至第三阶段详化版\par}
+    \end{minipage}};
+  \node[anchor=south west, text=mainNavy, font=\sffamily\footnotesize\bfseries]
+    at ([xshift=2.2cm, yshift=1.15cm] current page.south west)
+    {基础指法、节奏与和弦\; →\; 技巧进阶与伴奏应用\; →\; 指板、音阶与即兴\; →\; 曲目 Solo 专项};
+\end{tikzpicture}\null
+\end{titlepage}}
+
+% ============ 6. 阶段扉页 ============
+% \stagepage{阶段号数字}{色名}{阶段名}{课程范围}{阶段导览}{左列课程}{右列课程}
+\newcommand{\stgitem}[1]{{\footnotesize\faIcon{chevron-right}}\hspace{5pt}#1\par\vspace{4.5pt}}
+\newcommand{\stagepage}[7]{%
+\clearpage\thispagestyle{empty}%
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[#2] (current page.south west) rectangle (current page.north east);
+  \fill[white, opacity=0.08]
+    ([xshift=2.5cm, yshift=2.5cm] current page.south east) circle (7cm);
+  \node[anchor=north west, text=white, opacity=0.28]
+    at ([xshift=1.4cm, yshift=-1.0cm] current page.north west)
+    {\sffamily\fontsize{150}{150}\selectfont\bfseries #1};
+  \node[anchor=west, text=white] at ([xshift=2.2cm, yshift=3.4cm] current page.west) {%
+    \begin{minipage}{15cm}
+      {\fontsize{13}{18}\selectfont\bfseries 第#1阶段 \; · \; #4\par}\vspace{.6em}
+      {\sffamily\fontsize{32}{40}\selectfont\bfseries #3\par}\vspace{1.2em}
+      {\fontsize{11.5}{20}\selectfont 阶段导览\quad #5\par}
+    \end{minipage}};
+  \node[anchor=south west, fill=white, fill opacity=0.14, text opacity=1,
+        rounded corners=8pt, inner sep=16pt, text=white]
+    at ([xshift=2.0cm, yshift=2.6cm] current page.south west) {%
+    \begin{minipage}[t]{7.3cm}\raggedright\small #6\end{minipage}\hspace{6mm}%
+    \begin{minipage}[t]{7.3cm}\raggedright\small #7\end{minipage}};
+\end{tikzpicture}\clearpage}
+
+% ============ 7. 课程卡片 ============
+\newcommand{\lessonbadge}[1]{\tcbox[on line, arc=1.2mm, boxrule=0pt,
+  colback=white, coltext=stagecur, left=4pt, right=4pt, top=1.5pt, bottom=1.5pt,
+  fontupper=\sffamily\bfseries\small]{第 #1 课}}
+
+\newtcolorbox{lessoncard}[3][]{%
+  enhanced, breakable,
+  colback=white, colframe=stagecur!85, boxrule=0.5pt, arc=2.5mm,
+  drop fuzzy shadow=black!25,
+  colbacktitle=stagecur, coltitle=white, fonttitle=\sffamily\bfseries,
+  title={\lessonbadge{#2}\hspace{7pt}#3},
+  attach boxed title to top left={xshift=5mm, yshift=-3mm},
+  boxed title style={arc=2mm, boxrule=0pt,
+    left=6pt, right=10pt, top=3.5pt, bottom=3.5pt},
+  top=6.5mm, left=4.5mm, right=4.5mm, bottom=3.5mm,
+  before skip=8mm, after skip=6mm, #1}
+
+% 卡内子块小标题：图标 + 粗体
+\newcommand{\cardsec}[2]{\par\vspace{6pt}\noindent
+  {\color{stagecur}#1\hspace{5pt}\bfseries\sffamily #2}\par\nobreak\vspace{1pt}}
+
+% 选曲徽章行：\songrow{标签}{内容}
+\newcommand{\songrow}[2]{\par\vspace{4pt}\noindent
+  \tcbox[on line, arc=6pt, boxrule=0pt, colback=stagecur!12,
+    coltext=stagecur!55!black, left=7pt, right=9pt, top=2.5pt, bottom=2.5pt,
+    fontupper=\sffamily\bfseries\small]{\faMusic\hspace{4pt}#1}\hspace{7pt}{\small #2}\par\vspace{2pt}}
+
+% ============ 8. 照片：圆角 + 细描边 ============
+\newsavebox\photobox
+\newcommand{\photo}[2][3.2cm]{%
+  \sbox\photobox{\includegraphics[height=#1]{#2}}%
+  \begin{tikzpicture}
+    \begin{scope}
+      \clip[rounded corners=2.5mm] (0,0) rectangle (\wd\photobox, \ht\photobox);
+      \node[anchor=south west, inner sep=0pt] at (0,0) {\usebox\photobox};
+    \end{scope}
+    \draw[black!22, line width=0.6pt, rounded corners=2.5mm]
+      (0,0) rectangle (\wd\photobox, \ht\photobox);
+  \end{tikzpicture}}
+
+% 无编号图注
+\newcommand{\figcaption}[1]{\par\vspace{3pt}{\centering\sffamily\footnotesize
+  \color{inkGray!80}#1\par}}
+
+% ============ 8b. 图解笔记块：图 + 讲解要点 ============
+\newtcolorbox{fignote}[1][]{%
+  enhanced, colback=stagecur!4, colframe=stagecur!35,
+  boxrule=0.4pt, arc=2mm,
+  left=3.5mm, right=3.5mm, top=3.5mm, bottom=2.5mm,
+  before skip=9pt, after skip=6pt, #1}
+\newcommand{\notehead}{\par\vspace{5pt}\noindent
+  {\color{stagecur}\faIcon{lightbulb}\hspace{4pt}\bfseries\sffamily\small 图解笔记}\par\nobreak\vspace{1pt}}
+\newenvironment{fignotes}{\notehead\footnotesize
+  \begin{itemize}[itemsep=1.5pt, topsep=2pt]}{\end{itemize}}
+
+% 流程链：\stepchip{步骤} + \steparrow 连接，放 center 环境里自动换行
+\newcommand{\stepchip}[1]{\tcbox[on line, arc=1.5mm, boxrule=0.5pt,
+  colframe=stagecur!45, colback=stagecur!8, coltext=stagecur!50!black,
+  left=6pt, right=6pt, top=2.5pt, bottom=2.5pt,
+  fontupper=\sffamily\small]{#1}}
+\newcommand{\steparrow}{\hspace{3pt}\tikz[baseline=-3.5pt]{\draw[-{Stealth[length=2mm]},
+  stagecur!70, line width=1pt] (0,0) -- (0.5,0);}\hspace{3pt}}
+
+% ============ 9. 指板音位图（横向，任意品数） ============
+% \begin{fretboard}[品数]  弦号 1=高音e(上) … 6=低音E(下)
+\newenvironment{fretboard}[1][12]{%
+  \def\fbfrets{#1}%
+  \begin{tikzpicture}[x=0.85cm,y=0.42cm]
+    \foreach \s in {1,...,6}{
+      \draw[line width={0.4pt+0.1pt*\s}] (0,6-\s) -- (\fbfrets,6-\s);
+    }
+    \draw[line width=2.4pt] (-0.02,0) -- (-0.02,5);
+    \foreach \f in {1,...,\fbfrets}{ \draw[line width=0.6pt] (\f,0) -- (\f,5); }
+    \foreach \f in {3,5,7,9,12}{
+      \ifnum\f>\fbfrets\relax\else
+        \node[gray,font=\scriptsize] at (\f-0.5,-0.9) {\f};
+      \fi }
+    \foreach \s/\n in {1/e,2/B,3/G,4/D,5/A,6/E}{
+      \node[font=\scriptsize\sffamily,left] at (-0.85,6-\s) {\n};
+    }
+}{\end{tikzpicture}}
+
+% \fbmark[颜色]{弦}{品}{标签}；品=0 为空弦
+\newcommand{\fbmark}[4][fbdotcolor]{%
+  \ifnum#3=0
+    \draw[#1,line width=0.9pt] (-0.45,6-#2) circle (0.16);
+    \node[#1,font=\tiny\sffamily] at (-0.45,6-#2) {#4};
+  \else
+    \fill[#1] (#3-0.5,6-#2) circle (0.21);
+    \node[white,font=\tiny\sffamily] at (#3-0.5,6-#2) {#4};
+  \fi}
+
+% \fbroot{弦}{品}{标签}：根音红色 + 外圈
+\newcommand{\fbroot}[3]{%
+  \fbmark[fbrootcolor]{#1}{#2}{#3}%
+  \ifnum#2=0
+    \draw[fbrootcolor,line width=0.9pt] (-0.45,6-#1) circle (0.24);
+  \else
+    \draw[fbrootcolor,line width=0.9pt] (#2-0.5,6-#1) circle (0.29);
+  \fi}
+
+% ============ 10. 竖版和弦窗格（5 品内） ============
+% \begin{chordbox}[起始品号]{和弦名}  起始品号留空=开放把位（画弦枕）
+\newenvironment{chordbox}[2][]{%
+  \begin{tikzpicture}[x=0.42cm,y=0.5cm,line cap=round,
+      baseline=(current bounding box.center)]
+    \node[font=\sffamily\bfseries] at (2.5,1.5) {#2};
+    \foreach \s in {0,...,5}{\draw[line width=0.55pt] (\s,0) -- (\s,-5);}
+    \foreach \f in {0,...,5}{\draw[line width=0.55pt] (0,-\f) -- (5,-\f);}
+    \if\relax\detokenize{#1}\relax
+      \draw[line width=2.4pt] (-0.04,0.02) -- (5.04,0.02);
+    \else
+      \node[font=\sffamily\small,anchor=east] at (-0.35,-0.5) {#1};
+    \fi
+}{\end{tikzpicture}}
+
+% \cbdot[手指号]{弦}{品}（品为窗格内相对品 1-5）
+\newcommand{\cbdot}[3][]{%
+  \fill[inkGray] (6-#2,0.5-#3) circle (0.17);
+  \if\relax\detokenize{#1}\relax\else
+    \node[white,font=\tiny\sffamily] at (6-#2,0.5-#3) {#1};\fi}
+% \cbbarre[手指号]{品}{从弦}{到弦}
+\newcommand{\cbbarre}[4][1]{%
+  \draw[inkGray,line width=7pt] (6-#3,0.5-#2) -- (6-#4,0.5-#2);
+  \node[white,font=\tiny\sffamily] at ({(12-#3-#4)/2},0.5-#2) {#1};}
+\newcommand{\cbopen}[1]{\draw[line width=0.7pt] (6-#1,0.42) circle (0.12);}
+\newcommand{\cbmute}[1]{\node[font=\footnotesize] at (6-#1,0.42) {$\times$};}
+
+% ============ 11. 节奏块（符头+符杠风格） ============
+\newcommand{\rnhead}[1]{%
+  \fill[rotate around={-20:(#1,0)}] (#1,0) ellipse (0.14 and 0.10);
+  \draw[line width=0.9pt] (#1+0.12,0.04) -- (#1+0.12,1);}
+\newcommand{\rndot}[1]{\fill (#1+0.30,0.05) circle (0.045);}
+\newcommand{\rnflag}[1]{%
+  \draw[line width=0.9pt] (#1+0.12,1)
+    .. controls (#1+0.38,0.78) and (#1+0.30,0.62) .. (#1+0.34,0.38);}
+\newcommand{\rnbeamA}[2]{\draw[line width=2.6pt] (#1+0.12,0.96) -- (#2+0.12,0.96);}
+\newcommand{\rnbeamB}[2]{\draw[line width=2.6pt] (#1+0.12,0.78) -- (#2+0.12,0.78);}
+\newenvironment{rpattern}[1]{%
+  \def\rlabel{#1}%
+  \begin{tikzpicture}[x=0.55cm,y=0.55cm,baseline=0]
+}{%
+    \node[font=\footnotesize,color=inkGray,anchor=north]
+      at ([yshift=-2pt]current bounding box.south) {\rlabel};
+  \end{tikzpicture}}
+
+% ============ 12. 页面小标题 + 分隔花饰 + 图例色块 ============
+\newcommand{\pagehead}[1]{{\noindent\sffamily\bfseries\LARGE\color{mainNavy}#1\par}%
+  \vspace{4pt}{\noindent\color{stageC}\rule{2.4cm}{2.2pt}\par}\vspace{12pt}}
+
+\IfFileExists{pgfornament.sty}{%
+  \usepackage{pgfornament}
+  \newcommand{\divider}{\begin{center}%
+    \textcolor{stageC!80}{\pgfornament[width=3.2cm]{88}}\end{center}}%
+}{%
+  \newcommand{\divider}{\begin{center}\begin{tikzpicture}
+    \draw[stageC!70, line width=0.6pt] (-2.6,0) -- (-0.45,0);
+    \node[stageC] at (0,0) {\faMusic};
+    \draw[stageC!70, line width=0.6pt] (0.45,0) -- (2.6,0);
+  \end{tikzpicture}\end{center}}}
+
+\newcommand{\stagesq}[1]{\textcolor{#1}{\rule[-1pt]{7pt}{7pt}}}
+
+\endinput
