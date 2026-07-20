@@ -3,7 +3,6 @@
 ![build](https://github.com/sha156/ai-guitar-textbook/actions/workflows/build.yml/badge.svg)
 
 一份出版物级的吉他课程教学大纲：35 课、四阶段，从零基础的爬格子一路到《加州旅馆》Solo。
-课程内容来自真实教学场景的口述整理，排版、配图、讲解笔记全部由 AI（Claude Code）
 用 XeLaTeX 从零搭建——包括 23 套自绘矢量图和 8 张 AI 生成插画。
 
 **成品：[`吉他课程教学大纲_第1-35课_精排版.pdf`](./吉他课程教学大纲_第1-35课_精排版.pdf)（43 页）**
