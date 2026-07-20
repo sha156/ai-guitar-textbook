@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+  pull_request:
+    branches: [main]
+
+jobs:
+  xelatex:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile (two passes)
+        working-directory: build/tex
+        run: |
+          xelatex -interaction=nonstopmode main.tex
+          xelatex -interaction=nonstopmode main.tex
+
+      - name: Check for errors and missing glyphs
+        working-directory: build/tex
+        run: |
+          if grep -E "^!" main.log; then
+            echo "::error::LaTeX errors found"; exit 1
+          fi
+          if grep -E "Missing character" main.log; then
+            echo "::error::Missing glyphs found"; exit 1
+          fi
+          test -f main.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: syllabus-pdf
+          path: build/tex/main.pdf
+          retention-days: 14

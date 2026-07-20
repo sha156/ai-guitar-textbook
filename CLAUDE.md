@@ -65,6 +65,12 @@ pdftoppm -png -r 100 main.pdf qa/p          # 渲染 PNG
 ```
 
 - latexmk 不可用（缺 perl），别尝试。
+- 西文字体带跨平台回退（Windows: Palatino/Segoe UI；其他平台自动落到 TeX Gyre），
+  中文由 ctex 按平台自选——改字体只动 main.tex 的 \IfFontExistsTF 分支。
+- **CI**：push/PR 会触发 `.github/workflows/build.yml`（TeX Live 容器编两遍 + 错误/缺字检查）。
+  本地过了 CI 红了，优先怀疑 Fandol 字库缺字或包版本差异。
+- **许可**：双许可（工程 MIT + 课文 CC BY-NC 4.0，见 LICENSE / LICENSE-CONTENT.md）；
+  给课程正文添加内容前注意贡献即视为接受该许可（CONTRIBUTING.md 有声明）。
 - **改动涉及的页必须逐页目检 PNG**（Read 工具看图）：查溢出、错位、缺字、图文重叠、页眉换色。
 - **对账清单**：lessoncard=35、\songrow=11、\pdfbookmark[2]=35、页数与上版对比可解释。
 - 验收通过后：`cp main.pdf ../../吉他课程教学大纲_第1-35课_精排版.pdf`，并更新 CHECKPOINT.md。

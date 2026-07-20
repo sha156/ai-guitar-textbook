@@ -3,8 +3,14 @@
 \documentclass[11pt]{ctexart}
 \usepackage[a4paper, top=2.7cm, bottom=3.0cm, left=2.2cm, right=2.2cm,
   headheight=1.3cm, headsep=0.7cm, footskip=1.6cm]{geometry}
-\setmainfont{Palatino Linotype}
-\setsansfont{Segoe UI}
+% 西文字体：Windows 用系统字体，其他平台回退到 TeX 发行版自带的 TeX Gyre 系
+% （中文字体由 ctex 按平台自动选择：Windows 宋体/雅黑，Linux Fandol，macOS 苹方）
+\IfFontExistsTF{Palatino Linotype}
+  {\setmainfont{Palatino Linotype}}
+  {\setmainfont{TeX Gyre Pagella}}
+\IfFontExistsTF{Segoe UI}
+  {\setsansfont{Segoe UI}}
+  {\setsansfont{TeX Gyre Heros}}
 \usepackage{guitar-macros}
 \usepackage[hidelinks, unicode]{hyperref}
 \graphicspath{{../images/}}

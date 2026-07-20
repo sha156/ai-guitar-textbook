@@ -1,0 +1,33 @@
+本仓库采用双许可（Dual License）：
+
+1. 排版工程与代码（build/tex/ 下的 LaTeX 源码与样式、build/*.py 脚本、docs/、
+   仓库配置文件）适用 MIT License，全文见下。
+2. 课程内容（35 课教学文本，即 build/content_extracted.txt、build/tex/stage*.tex
+   中的课文文字，以及两份 PDF 成品）适用 CC BY-NC 4.0，见 LICENSE-CONTENT.md。
+   简言之：可署名转载与改编，禁止商用；商用授权请联系课程作者。
+
+AI 生成插画（build/images/ai/）随排版工程按 MIT 发布。
+
+---------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 sha156
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
