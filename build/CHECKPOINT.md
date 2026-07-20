@@ -53,3 +53,9 @@
 2. 第 31-35 课原文只有标题；细化后填 stage4.tex，可复用 fignote 组件。
 3. 踩坑：附录超页 1-2mm 会溢出空页且页眉 overlay 坐标漂移成整页色块（收紧 \vspace 解决）；
    Palatino 缺 ■ ○ ◌ 等几何字符（用 \rule / TikZ / 文字表述替代）；\rhead 与 fancyhdr 冲突（改名 \rnhead）。
+
+## v5（2026-07-20）：发布 GitHub 公开仓库
+
+- https://github.com/sha156/ai-guitar-textbook （public，34 个文件，含成品 PDF + 全部 tex 源 + README）
+- 弃用素材（wiki 照片、早期自备 jpg）与编译中间产物已 gitignore，未入库；push 前密钥扫描干净。
+- 本地 D:\Project\py\bcq 已初始化为 git 仓库（main 分支跟踪 origin/main），后续改动直接 commit+push。
