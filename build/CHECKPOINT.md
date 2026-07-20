@@ -59,3 +59,10 @@
 - https://github.com/sha156/ai-guitar-textbook （public，34 个文件，含成品 PDF + 全部 tex 源 + README）
 - 弃用素材（wiki 照片、早期自备 jpg）与编译中间产物已 gitignore，未入库；push 前密钥扫描干净。
 - 本地 D:\Project\py\bcq 已初始化为 git 仓库（main 分支跟踪 origin/main），后续改动直接 commit+push。
+
+## v6（2026-07-21）：协作化改造完成
+
+- 跨平台字体回退（IfFontExistsTF → TeX Gyre）；CI（TeX Live 容器编两遍+错误/缺字检查）
+  **首跑即绿**（run 29753115781，3m20s），证明 Linux 环境可完整复现编译。
+- 双许可落地：工程 MIT + 课文 CC BY-NC 4.0；CONTRIBUTING.md 面向人类协作者；
+  docs/ai-prompts.md 收录 8 张插画全套提示词与风格合同。
